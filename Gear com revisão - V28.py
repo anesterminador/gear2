@@ -48,12 +48,6 @@ from openpyxl import Workbook
 from openpyxl.styles import PatternFill, Font, Alignment, Border, Side
 from openpyxl.worksheet.datavalidation import DataValidation
 from openpyxl.formatting.rule import FormulaRule
-import argparse
-import json
-
-def carregar_config(path='scheduler_config.json'):
-    with open(path, 'r', encoding='utf-8') as f:
-        return json.load(f)
 
 # Importações com mensagens claras caso faltem
 try:
@@ -1723,15 +1717,18 @@ def main():
 
 
 if __name__ == "__main__":
-    parser = argparse.ArgumentParser()
-    parser.add_argument("--headless", action="store_true", help="Executa o Gear sem interface gráfica")
-    args = parser.parse_args()
-
-    if args.headless:
-        cfg = carregar_config()
-        print("Executando Gear em modo headless com base no scheduler_config.json")
-        # Chama aqui a função principal que gera o cronograma
-        # Exemplo:
-        # gerar_cronograma(cfg)
-    else:
+    try:
         main()
+    except SystemExit as se:
+        print(str(se))
+    except Exception as e:
+        traceback.print_exc()
+        try:
+            messagebox.showerror("Erro fatal", str(e))
+        except Exception:
+            pass
+    finally:
+        try:
+            kill_office_processes()
+        except Exception:
+            pass
