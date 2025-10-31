@@ -1,0 +1,16 @@
+{
+  "minutos_por_dia": 120,
+  "dias_por_semana": 5,
+  "data_inicio": "01/11/2025",
+  "data_prova": "20/06/2026",
+  "tipo_prova": "TSA",
+  "temas_path": "C:/Users/Davi/OneDrive/Anest-Review/GEAR/Gear com revisão espaçada (experimental)/lista_de_temas.xlsx",
+  "aulas_path": "C:/Users/Davi/OneDrive/Anest-Review/GEAR/Gear com revisão espaçada (experimental)/lista_de_aulas.xlsx",
+  "capa_path": "C:/Users/Davi/OneDrive/Anest-Review/GEAR/Gear com revisão espaçada (experimental)/capagear4.png",
+  "orient_path": "C:/Users/Davi/OneDrive/Anest-Review/GEAR/Gear com revisão espaçada (experimental)/Revisao_espacada_orientacoes2.pdf",
+  "custom_weekdays": [],
+  "template_path": "C:/Users/Davi/OneDrive/Anest-Review/GEAR/Gear com revisão espaçada (experimental)/Estilo.dotx",
+  "review_offsets": [
+    30
+  ]
+}
